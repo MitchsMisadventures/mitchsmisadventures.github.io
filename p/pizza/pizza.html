@@ -57,6 +57,13 @@
 
 										</p>
 
+										<center>
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/vz1nSJSIyhw?si=bWgiz2IRduQA8Zuj" 
+											title="YouTube video player" 
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+										</center>
+
 										<h2>Building the Mood Detector</h2>
 										
 										<p>
@@ -300,12 +307,150 @@
 
 										<p>
 
-											To fix this, 
+											To fix this, we can run some facial recognition software to find the location of the face within the image itself. Once we find the face, we
+											can create a border around it. From here, we can then resize the image to map the new dimensions as well as transform the image from a standard
+											RGB image to a Grayscale picture.
+
+											<div style="text-align: center;">
+												<div style="display: inline-block;">
+													<span class="image"><img src="imgs/img4-dak-before.png" alt="Before" width="300"/></span>
+													<span class="image"><img src="imgs/img5-dak-after.png" alt="After" width="400"/></span>
+												</div>
+												<div>
+													<p>Before FR Transformation | After FR Transformation</p>
+												</div>
+											</div>
+
+										</p>
+
+										<p>
+
+											With the transformation complete, we can finally start applying our own images into model that we trained earlier! To begin testing, I simply 
+											found some celebrities online and ran their static images through our model. I made it in the way so that the predicted values are super imposed
+											on the image itself so that it's easier to read. Here are some of the results:
 
 										</p>
 										
+										<center>
+											<span class="image"><img src="imgs/img6-purdy-result.png" alt="Brock Purdy FR Result" width="400"/></span>
+										</center>
+
+										<center>
+											<span class="image"><img src="imgs/img7-dak-result.png" alt="Dak FR Result" width="400"/></span>
+										</center>
+
+										<center>
+											<span class="image"><img src="imgs/img8-lalisa-result.png" alt="Lalisa FR Result" width="400"/></span>
+										</center>
+
+										<br><br>
 										
+										<h4> Calculating "Happy" Values</h4>
+
+										<p>
+
+											I feel like at this point, I should probably explain exactly what these values mean and how I quantified something as abstract as happiness.
+											The way I went about it is pretty straightforward; I simply programmed my model in a way that it the value it gives us how confident it is 
+											that the person in the picture is happy. If we take a look at the first image for example, the one of San Francisco 49er's Quarterback, Brock Purdy,
+											we can see that he has a value of 0.9963 and is classified as happy. In English, this means that our model is 99.63% confident that Brock Purdy is 
+											happy in this picture.
+
+										</p>
+
+										<p>
+
+											We can compare this to the second image, and we can see that Dak Prescott has a value of 0.0004 and is classified as "Not Happy". This number tells us that 
+											the model is 0.04% confident that Dak is happy in the image. In other words, the model is 99.96% confident that Dak is sad in this image. It would make sense 
+											given this is a picture that represents his feelings of being eliminated from the NFL Playoffs, nobody is happy when this happens.  
+
+										</p>
+
+										<p>
+
+											So how exactly do we use these values to classify the images. I simply just created cutoff values. If the model is over 80% confident that the person in the image 
+											is happy, then we'll classify them as happy. If the model is less than 20% confdient that the person is happy, then we can classify them as sad. Anything in the middle,
+											and we'll mark them as neutral. I spent a bit of time trying to find the best thresholds and I found that this was the best range and gave me the most conistent results.
+
+										</p>
+
+										<h3> Using our Webcam</h3>
+
+										<p>
+
+											Okay, so we now have a model that can predict if a person is feeling happy or not, but only via images. How are we going to hook this up to our webcam and try to get live 
+											results? Well the answer is actually pretty easy! Given the fact that a video is just a bunch of images in rapid succession, we can simply have our model iterate
+											through every frame of the webcam video and keep updating the "Happy Values".
+
+										</p>
+
+										<p>
+
+											From here, all I did was keep track of how many frames in a row my model thinks that the person in the video is sad. For my test, I set a threshold of 100. This means 
+											that if the model thinks that the person in the video is sad for over 100 frames, then we can have it fire off some code to do whatever want. In our case, if we reach 
+											100 "sad frames", then we can run some code to order some pizza!
+
+										</p>
+
+										<h3> Ordering Pizza with Python </h3>
+
+										<p> 
+											
+										There's a bit of a running joke in the coding community that there's a library in Python for everything. As much as I would love to break free of this stereotypes, it 
+										Unfortunately rings free for this case. What I'm saying is that there already exists a Python Library that will allow you to order pizza using code. A link to the Github Repo 
+										can be found by clicking the following link: 
+
+										</p>
+
+										<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+											<ul class="actions stacked">
+												<li><a href="https://github.com/ggrammar/pizzapi" class="button primary small">Dominos Pizza API : PizzApi</a></li>
+	
+											</ul>
+										</div>
+
+										<p>
+
+											I won't go into too many details as to how the code works as all the information can be found on the Github, but I figured I could go over some key pieces of information.
+											So the way this API works is you start off by giving some preliminary information such as your name, address, and card information. It starts by using your address 
+											to find the closest Dominos. From there, we can use the API to search the menu of that specific store. This is important because there may be region specific orders 
+											that we may want to look at. However, what we really want is to know that the unique ID is for the items at the store. Everything from the drinks, pizza's, and even the 
+											side salads have a unique ID associated with them -- which makes sense! What we need to do is find the ID of the items we want to order so that we can, well, order them.
+											For this trial, I simply wanted as specialty 12in Pepperoni Pizza which has an ID of "P12IPAPX". 
+
+										</p>
 										
+										<center>
+											<span class="image"><img src="imgs/img9-add-pizza.png" alt="Pizza Code" width="400"/></span>
+										</center>
+
+										<br><br>
+
+										<p>
+
+											With the ID we can add it to our virtual order. Once we're satisfied with all of our listings, we can then run some simple code to process the order! Since we gave 
+											our card information already, our card will be charged and the food will be ordered! In case you want to try this on your own and you're scared of spending a lot of 
+											money during the testing phase, there actually is a seetting in the PizzAPI that lets you test the code without actually charing your card. 
+
+										</p>
+
+										<h3> Closing Remarks </h3>
+
+										<p>
+
+											That's about it! The only thing that's left to do is act sad in front of the camera and wait for the pizza to arrive at the address you listed before! Honestly, this project 
+											was a lot of fun and is definitely a project I am incredibly proud of. I feel like this project covers a lot of bases that are good to learn: ComputerVision, Neural Networks,
+											API Navigation, Data Restructuring, and so much more! 
+
+										</p>
+
+										<p>
+
+											As mentioned at the beginning of this thread. There is an entire video associated with this project! Please consider checking it out if you want to learn more about this 
+											project and actually see it in action! The link as at the top of this page. Thank you so much for reading!
+
+										</p>
+										
+							
 									<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
 										<ul class="actions stacked">
 											<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
