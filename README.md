@@ -1,5 +1,3 @@
-# Welcome to my portfolio!
-
 Hello and welcome to my portfolio website! You can access it by clicking the following link, <a href = mitchsmisadventures.github.io/> mitchsmisadventures.github.io </a>  
 
 # Socials
