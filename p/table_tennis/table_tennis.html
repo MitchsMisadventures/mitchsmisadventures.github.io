@@ -1,108 +1,115 @@
 <!DOCTYPE HTML>
 <!--
-	Forty by HTML5 UP
+	Dopetrope by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
 		<head>
-			<title>WiiPlay Table Tennis</title>
+			<title>An AI That Plays WiiPlay Table Tennis</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="icon" href="../../images/sub badge.png" type="image/x-icon" />
 			<link rel="stylesheet" href="../../assets/css/main.css" />
 			<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 		</head>
-	<body class="is-preload">
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+			<!-- Header -->
+			<section id="header">
 
-				<!-- Header -->
-				<header id="header">
-					<a href="../../index.html" class="logo"><span>Mitchs</span> <strong>Misadventures</strong></a>
-							<nav>
-								<a href="../../projects.html">Projects</a>
-								<a href="../../visualizations.html">Dashboards</a>
-								<a href="../../contact.html">Contact</a>
-							</nav>
-				</header>
+				<!-- Logo -->
+					<h1><a href="index.html">MitchsMisadventures</a></h1>
 
-				<!-- Main -->
-					<div id="main" class="alt">
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="../../index.html">Home</a></li>
+							<li class="current"><a href="../../projects.html">Projects</a></li>
+							<li class="current">
+								<a href="https://public.tableau.com/app/profile/mitchsmisadventures/vizzes" target="_blank">Dashboards</a>
+							  </li>
+							  <li class="current"><a href="../../contact.html">Contact</a></li>
+						</ul>
+					</nav>
 
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h1>An AI That Plays WiiPlay Table Tennis</h1>
-									</header>
-									<span class="image main"><img src="imgs/ee100.jpg" alt="" /></span>
+			</section>
 
-									<h2>Introduction</h2>
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
 
-									<p>
+						<!-- Content -->
+							<article class="box post">
+                                
+                                <header>
+                                    <h3>Introduction</h3>
+                                </header>
 
-										For this project, my intention was to start posting short form content on websites such as TikTok and YouTube. I wanted to do this because I felt like 
-										I wanted to publish some sort of content in between large scale projects, such as the AI that orders you a pizza if it detects that you're sad. Doing these 
-										short videos not only allowed me to create content more consistently, but also it allowed me the opportunity to practice my coding skills and work on 
-										projects that could be done in a relatively short amount of time!
+                                <p>
 
-									</p>
+                                    For this project, my intention was to start posting short form content on websites such as TikTok and YouTube. I wanted to do this because I felt like 
+                                    I wanted to publish some sort of content in between large scale projects, such as the AI that orders you a pizza if it detects that you're sad. Doing these 
+                                    short videos not only allowed me to create content more consistently, but also it allowed me the opportunity to practice my coding skills and work on 
+                                    projects that could be done in a relatively short amount of time!
 
-									<p>
+                                    <br><br>
 
-										If you would like to see the video associated with this project, feel free to check it out on my TikTok, <a href = https://www.tiktok.com/@mitchsmisadventures/video/7337750095372307742>@MitchsMisadventures</a>
+                                    If you would like to see the video associated with this project, feel free to check it out on my TikTok, <a href = https://www.tiktok.com/@mitchsmisadventures/video/7337750095372307742>@MitchsMisadventures</a>
 
-									</p>
+                                    <br><br>
 
-									<p>
+                                    For this project, our objective is pretty straightforward. We want to be able to write some code so that we can rally a table tennis ball 100 times in WiiPlay. After 100 successful rallies,
+                                    the game ends and we are victorious.
 
-										For this project, our objective is pretty straightforward. We want to be able to write some code so that we can rally a table tennis ball 100 times in WiiPlay. After 100 successful rallies,
-										the game ends and we are victorious.
+                                </p>
 
-									</p>
+                                <header>
+                                    <h3>Getting The Positional Data</h3>
+                                </header>
 
-									<h2> Getting the Positional Data </h2>
+                                <header>
+                                    <h4> Position </h4>
+                                </header>
+                                <p>
 
-									<h3> Position </h3>
+                                    Getting the positional data can be split up into two distinct parts, both equally important. Not only did I need to try to figure out the position of the ball, but, 
+                                    I also had to figure out the direction that the ball was moving towards, that way I could rally the ball back. Doing this isn't too difficult. What we can do is create 
+                                    an HSV mask that corresponds to the orange color associated with the ball. 
 
-									<p>
+                                </p>
 
-										Getting the positional data can be split up into two distinct parts, both equally important. Not only did I need to try to figure out the position of the ball, but, 
-										I also had to figure out the direction that the ball was moving towards, that way I could rally the ball back. Doing this isn't too difficult. What we can do is create 
-										an HSV mask that corresponds to the orange color associated with the ball. 
+                                <center>
+                                    <figure>
+                                        <img src="imgs/img1-color-masking.png" alt="Orange Ball Masking" width="400"/>
+                                        <figcaption>Orange Ball Masking</figcaption>
+                                    </figure>
+                                </center>
 
-									</p>
+                                <br><br>
 
-									<center>
-										<figure>
-											<img src="imgs/img1-color-masking.png" alt="Orange Ball Masking" width="400"/>
-											<figcaption>Orange Ball Masking</figcaption>
-										</figure>
-									</center>
+                                <p>
 
-									<br><br>
+                                    This wasn't too difficult to do, the only slight issue came with the fact that the wooden floor has a pretty similar color to the ball. It's at least in the same HSV range.
+                                    I had two ways to go about this issue: I could either narrow the HSV range and make it more strict in hopes that I only get the ball, or, I could decrease the scope that 
+                                    my bot sees. I ended up doing a little bit of both. I tightened the range up a little bit in addition to changing the region that my bot can see. Instead of seeing the entire screen, 
+                                    it now only looked at the table itself.
 
-									<p>
+                                </p>
 
-										This wasn't too difficult to do, the only slight issue came with the fact that the wooden floor has a pretty similar color to the ball. It's at least in the same HSV range.
-										I had two ways to go about this issue: I could either narrow the HSV range and make it more strict in hopes that I only get the ball, or, I could decrease the scope that 
-										my bot sees. I ended up doing a little bit of both. I tightened the range up a little bit in addition to changing the region that my bot can see. Instead of seeing the entire screen, 
-										it now only looked at the table itself.
+                                <p>
 
-									</p>
+                                    With the mask and region in place, all I had to do was write some code to detect white clusters on the mask. Doing so would give me the coordinates of the ball! 
 
-									<p>
+                                </p>
 
-										With the mask and region in place, all I had to do was write some code to detect white clusters on the mask. Doing so would give me the coordinates of the ball! 
+                                <header>
+                                    <h4>Direction</h4>
+                                </header>
 
-									</p>
-
-									<h3> Direction </h3>
-
-									<p>
+                                <p>
 
 									For this part, what I ended up doing was continuously record the position of the ball at two distinct times. I would compare the position of the ball in the present time (Position #1) with 
 									the position of the ball from a few frames in the past (Position #2). From here, all I had to do was get the vector that goes through Position #1 starting with Position #2. This will give me 
@@ -135,7 +142,9 @@
 										</figure>
 									</center>
 
-									<h2> Closing Remarks </h2>
+                                    <header>
+                                        <h3>Closing Remarks</h3>
+                                    </header>
 
 									<p>
 
@@ -144,42 +153,62 @@
 
 									</p>
 
+                            <br><br>
+
+							<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+								<ul class="actions stacked">
+									<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
+
+								</ul>
+							</div>
 
 
-									<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
-										<ul class="actions stacked">
-											<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
-
-										</ul>
-									</div>
-							</section>
+							</article>
 
 					</div>
+				</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://www.youtube.com/@MitchsMisadventures" class="icon brands alt fa-youtube"><span class="label">YouTube</span></a></li>
-								<li><a href="https://twitter.com/MitchsMistweets" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.instagram.com/mitchsmisadventures/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div>
+							<section>
+								<header>
+									<h2>Find me at...</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@MitchsMisadventures"><span class="label">YouTube</span></a></li>
+									<li><a class="icon brands fa-twitter" href="https://x.com/MitchsMistweets"><span class="label">Twitter</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/MitchsMisadventures"><span class="label">Github</span></a></li>
+									<li><a class="icon brands fa-google" href="mailto:mitchsmisadventures@gmail.com"><span class="label">GMail</span></a></li>
+								</ul>
+							</section>
 						</div>
-					</footer>
+						<div class="col-12">
 
-			</div>
+							<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<!-- <li>&copy; Untitled. All rights reserved.</li> -->
+										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
 
-		<!-- Scripts -->
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
+						</div>
+					</div>
+				</div>
+			</section>
 
-	</body>
+	</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
 </html>

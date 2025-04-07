@@ -1,66 +1,75 @@
 <!DOCTYPE HTML>
 <!--
-	Forty by HTML5 UP
+	Dopetrope by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
 		<head>
-			<title>Rage Comic AI</title>
+			<title>An AI That Makes Rage Comics</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="icon" href="../../images/sub badge.png" type="image/x-icon" />
 			<link rel="stylesheet" href="../../assets/css/main.css" />
 			<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 		</head>
-	<body class="is-preload">
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+			<!-- Header -->
+			<section id="header">
 
-				<!-- Header -->
-				<header id="header">
-					<a href="../../index.html" class="logo"><span>Mitchs</span> <strong>Misadventures</strong></a>
-							<nav>
-								<a href="../../projects.html">Projects</a>
-								<a href="../../visualizations.html">Dashboards</a>
-								<a href="../../contact.html">Contact</a>
-							</nav>
-				</header>
+				<!-- Logo -->
+					<h1><a href="index.html">MitchsMisadventures</a></h1>
 
-				<!-- Main -->
-					<div id="main" class="alt">
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="../../index.html">Home</a></li>
+							<li class="current"><a href="../../projects.html">Projects</a></li>
+							<li class="current">
+                                <a href="https://public.tableau.com/app/profile/mitchsmisadventures/vizzes" target="_blank">Dashboards</a>
+                              </li>
+                              <li class="current"><a href="../../contact.html">Contact</a></li>
+						</ul>
+					</nav>
 
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h1>An AI That Makes RAGE COMICS</h1>
-									</header>
-									<span class="image main"><img src="imgs/ee100.jpg" alt="" /></span>
-										<h2>Introduction</h2>
+			</section>
 
-									<p>
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
 
-										Like many of my projects, I actually have no idea how this project came into my mind. It was more of an intrusive thought if anything. Anyways,
-										for this project, I attempted to create an AI that would be able to create comic strips using sentiment analysis! This was the first time I 
-										really tried using sentiment analysis and I was pretty satisfied with the way this project turned out! I also want to state that I made a video 
-										on YouTube in which I showcase this project! Feel free to check out the video if that's more your type of medium!
+						<!-- Content -->
+							<article class="box post">
+								<header>
+									<h2>An AI That Makes Rage Comics</h2>
+								</header>
 
-									</p>
-									
-									<center>
-										<iframe width="560" height="315" src="https://www.youtube.com/embed/4t1IWqRyuJM?si=91nV1eX_FvpGbLFs" 
-										title="YouTube video player" 
-										frameborder="0" 
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-									</center>
+								<header>
+									<h3> Introduction</h3>
+								</header>
+                                <p>
 
-									<br><br>
+                                    Like many of my projects, I actually have no idea how this project came into my mind. It was more of an intrusive thought if anything. Anyways,
+                                    for this project, I attempted to create an AI that would be able to create comic strips using sentiment analysis! This was the first time I 
+                                    really tried using sentiment analysis and I was pretty satisfied with the way this project turned out! I also want to state that I made a video 
+                                    on YouTube in which I showcase this project! Feel free to check out the video if that's more your type of medium!
 
-									<h2> What is a "Rage Comic"</h2>
+                                </p>
+                                
+                                <center>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4t1IWqRyuJM?si=91nV1eX_FvpGbLFs" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </center>
 
+                                <br><br>
+                                <header>
+									<h3> What is a "Rage Comic"</h3>
+                                </header>
 									<p>
 
 										A "Rage Comic" is essentially a web comic that gets its appeal from being crudely created and having a sort of low quality feel to them. With this 
@@ -78,7 +87,10 @@
 
 									<br><br>
 
-									<h2>Creating The Layout</h2>
+                                    <header>
+                                        <h3> Creating The Layout </h3>
+                                    </header>
+
 
 									<p>
 
@@ -92,311 +104,339 @@
 										<span class="image"><img src="imgs/img2-blank-canvas.png" alt="Example Rage Comic" width="600"/></span>
 									</center>
 
-									<h2> Creating the Text </h2>
+                                <header>
+                                    <h3> Creating the Text </h3>
+                                </header>
 
-									<p>
+                                <p>
 
-										This part is actually a bit anticlimactic. I essentially used ChatGPT to provide the text for me. I simply asked if to give me text that it might 
-										find in a rage comic from 2007. I did a little bit of engineering so that it could present the text in a way that would make it easy to copy and paste into 
-										Python. I know there are ways to connect ChatGPT directly to Python using their API and tokens but at this point of this project, I wasn't sure if 
-										this was something worth finishing or not. So I decided to keep it simple for now.
+                                    This part is actually a bit anticlimactic. I essentially used ChatGPT to provide the text for me. I simply asked if to give me text that it might 
+                                    find in a rage comic from 2007. I did a little bit of engineering so that it could present the text in a way that would make it easy to copy and paste into 
+                                    Python. I know there are ways to connect ChatGPT directly to Python using their API and tokens but at this point of this project, I wasn't sure if 
+                                    this was something worth finishing or not. So I decided to keep it simple for now.
 
-									</p>
+                                </p>
 
-									<p>
+                                <p>
 
-										I say this but I have to admit that this isn't the first time I attempted this project. The last time I tried doing this project was before ChatGPT was a 
-										thing. At the time, trying to automatically generate text was a huge hurdle that I never got through. The way I was originally going about it was by 
-										visiting the <a href="https://www.reddit.com/r/fffffffuuuuuuuuuuuu/">subreddit</a> dedicated to Rage Comics and downloading the top 200 images or so. 
-										From there, I wrote some code to try to scrape the text that was on the images and then try to store it in a local database. This worked very poorly 
-										for multiple reasons. First of all, as I mentioned before, Rage Comics can come in all shapes and sizes. For this projcet we're following a 2x2 format
-										but there are people that have created comics in wildly different formats such as 3x2, 2x3, 2x6, 6x2, etc. This meant that I would first have to try 
-										to see how many panels were in the comic and then try to categorize it that way.
+                                    I say this but I have to admit that this isn't the first time I attempted this project. The last time I tried doing this project was before ChatGPT was a 
+                                    thing. At the time, trying to automatically generate text was a huge hurdle that I never got through. The way I was originally going about it was by 
+                                    visiting the <a href="https://www.reddit.com/r/fffffffuuuuuuuuuuuu/">subreddit</a> dedicated to Rage Comics and downloading the top 200 images or so. 
+                                    From there, I wrote some code to try to scrape the text that was on the images and then try to store it in a local database. This worked very poorly 
+                                    for multiple reasons. First of all, as I mentioned before, Rage Comics can come in all shapes and sizes. For this projcet we're following a 2x2 format
+                                    but there are people that have created comics in wildly different formats such as 3x2, 2x3, 2x6, 6x2, etc. This meant that I would first have to try 
+                                    to see how many panels were in the comic and then try to categorize it that way.
 
-									</p>
+                                </p>
 
-									<p>
+                                <p>
 
-										The next issue came from the fact that because these comics are poorly drawn by design, there were many instances in which the text that my code picked up 
-										did not match what the text in the comic said. It was a mess. It was at this point that I knew that I didn't have the capacity to attempt this project. I 
-										tried a Hail Mary approach and tried creating text based on the little text that I was able to scrape but it was completely incoherent. I gave up in the 
-										moment but I knew that I would be back in the future.
+                                    The next issue came from the fact that because these comics are poorly drawn by design, there were many instances in which the text that my code picked up 
+                                    did not match what the text in the comic said. It was a mess. It was at this point that I knew that I didn't have the capacity to attempt this project. I 
+                                    tried a Hail Mary approach and tried creating text based on the little text that I was able to scrape but it was completely incoherent. I gave up in the 
+                                    moment but I knew that I would be back in the future.
 
-									</p>
+                                </p>
 
-									<p>
+                                <p>
 
-										Anyways, back to the present day. We have technology and I asked ChatGPT to give me four lines of text that would be found in a rage comic. I then placed 
-										the text that it gave me into its respective quadrant. I tried to pick a font and size that looked most fitting.
+                                    Anyways, back to the present day. We have technology and I asked ChatGPT to give me four lines of text that would be found in a rage comic. I then placed 
+                                    the text that it gave me into its respective quadrant. I tried to pick a font and size that looked most fitting.
 
-									</p>
+                                </p>
 
-									<center>
-										<span class="image"><img src="imgs/img3-canvas-w-text.png" alt="Rage Comic with Text" width="600"/></span>
-									</center>
+                                <center>
+                                    <span class="image"><img src="imgs/img3-canvas-w-text.png" alt="Rage Comic with Text" width="600"/></span>
+                                </center>
 
-									<br><br>
+                                <br><br>
 
-									<h2> Getting the Faces</h2>
+                                <header>
+                                    <h3> Getting the Faces </h3>
+                                </header>
 
-									<p>
+                                <p>
 
-										This part of the project was the main reason for why I wanted to attempt it in the first place. Something that I didn't mention before was the fact that 
-										one of the ongoing bits with Rage Comics is the reusual of certain "faces". These faces have become a part of meme culture and can be found in almost 
-										every rage comic that has been created. These faces include the classic Troll Face that used to be prevelant back in the day! It would not be a 
-										complete comic without these faces and I knew that this was something that I <i>had</i> to include in my project somehow. With that being said, 
-										I decided to use sentiment analysis.
+                                    This part of the project was the main reason for why I wanted to attempt it in the first place. Something that I didn't mention before was the fact that 
+                                    one of the ongoing bits with Rage Comics is the reusual of certain "faces". These faces have become a part of meme culture and can be found in almost 
+                                    every rage comic that has been created. These faces include the classic Troll Face that used to be prevelant back in the day! It would not be a 
+                                    complete comic without these faces and I knew that this was something that I <i>had</i> to include in my project somehow. With that being said, 
+                                    I decided to use sentiment analysis.
 
-									</p>
+                                </p>
 
-									<h3> Sentiment Analysis and Rage Faces</h3>
+                                <header>
+                                    <h4> Sentiment Analysis and Rage Faces </h4>
+                                </header>
 
-									<p>
+                                <p>
 
-										There are a ton of rage faces that reappear across Rage Comics. For this portion, I decided it would be most convenient if I picked a few and 
-										associated those with common emotions. The way I went about this was by first going to Kaggle and finding a dataset that was made for sentiment 
-										analysis and had multiple emotions labeled. I ended up using a dataset by Praveen which can be accessed by clicking the following link:
+                                    There are a ton of rage faces that reappear across Rage Comics. For this portion, I decided it would be most convenient if I picked a few and 
+                                    associated those with common emotions. The way I went about this was by first going to Kaggle and finding a dataset that was made for sentiment 
+                                    analysis and had multiple emotions labeled. I ended up using a dataset by Praveen which can be accessed by clicking the following link:
 
-									</p>
+                                </p>
 
-									<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
-										<ul class="actions stacked">
-											<li><a href="https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp/data" class="button primary small">Emotions dataset for NLP</a></li>
+                                <div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+                                    <ul class="actions stacked">
+                                        <li><a href="https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp/data" class="button primary small">Emotions dataset for NLP</a></li>
 
-										</ul>
-									</div>
+                                    </ul>
+                                </div>
 
-									<br><br>
+                                <br><br>
 
-									<p>
+                                <p>
 
-										This dataset comes with six different emotions. I went online and found six common rage faces that I felt fit the emotions in an appropriate way.
+                                    This dataset comes with six different emotions. I went online and found six common rage faces that I felt fit the emotions in an appropriate way.
 
-									</p>
+                                </p>
 
-									<div style="text-align: center;">
-										<div style="display: inline-block;">
-											<span class="image"><img src="imgs/img4-anger-face.jpg" alt="Anger Face" width="300"/></span>
-											<span class="image"><img src="imgs/img5-fear-face.jpg" alt="Fear Face" width="300"/></span>
-										</div>
-										<div>
-											<p>Anger Face | Fear Face</p>
-										</div>
-									</div>
+                                <div style="text-align: center;">
+                                    <div style="display: inline-block;">
+                                        <span class="image"><img src="imgs/img4-anger-face.jpg" alt="Anger Face" width="300"/></span>
+                                        <span class="image"><img src="imgs/img5-fear-face.jpg" alt="Fear Face" width="300"/></span>
+                                    </div>
+                                    <div>
+                                        <p>Anger Face | Fear Face</p>
+                                    </div>
+                                </div>
 
-									<div style="text-align: center;">
-										<div style="display: inline-block;">
-											<span class="image"><img src="imgs/img6-joy-face.jpg" alt="Joy Face" width="300"/></span>
-											<span class="image"><img src="imgs/img7-love-face.jpg" alt="Love Face" width="300"/></span>
-										</div>
-										<div>
-											<p>Joy Face | Love Face</p>
-										</div>
-									</div>
+                                <div style="text-align: center;">
+                                    <div style="display: inline-block;">
+                                        <span class="image"><img src="imgs/img6-joy-face.jpg" alt="Joy Face" width="300"/></span>
+                                        <span class="image"><img src="imgs/img7-love-face.jpg" alt="Love Face" width="300"/></span>
+                                    </div>
+                                    <div>
+                                        <p>Joy Face | Love Face</p>
+                                    </div>
+                                </div>
 
-									<div style="text-align: center;">
-										<div style="display: inline-block;">
-											<span class="image"><img src="imgs/img8-sad-face.jpg" alt="Sad Face" width="300"/></span>
-											<span class="image"><img src="imgs/img9-surprise-face.jpg" alt="Surprise Face" width="300"/></span>
-										</div>
-										<div>
-											<p>Sad Face | Surprise Face</p>
-										</div>
-									</div>
+                                <div style="text-align: center;">
+                                    <div style="display: inline-block;">
+                                        <span class="image"><img src="imgs/img8-sad-face.jpg" alt="Sad Face" width="300"/></span>
+                                        <span class="image"><img src="imgs/img9-surprise-face.jpg" alt="Surprise Face" width="300"/></span>
+                                    </div>
+                                    <div>
+                                        <p>Sad Face | Surprise Face</p>
+                                    </div>
+                                </div>
 
-									<br><br>
+                                <br><br>
 
-									<p>
+                                <p>
 
-										With the faces in place, we could now train our model on the dataset that we downloaded from Kaggle. Once the model was trained, I was finally 
-										able to put the text that was given to us by ChatGPT through the model and try to see what emotions we get back. For the first trial, I simply 
-										ran the text from the first panel, "Le Me Browsing the Internet"
+                                    With the faces in place, we could now train our model on the dataset that we downloaded from Kaggle. Once the model was trained, I was finally 
+                                    able to put the text that was given to us by ChatGPT through the model and try to see what emotions we get back. For the first trial, I simply 
+                                    ran the text from the first panel, "Le Me Browsing the Internet"
 
-									</p>
+                                </p>
 
-									<center>
-										<span class="image"><img src="imgs/img10-ai-classification.PNG" alt="AI Classification" width="600"/></span>
-									</center>
+                                <center>
+                                    <span class="image"><img src="imgs/img10-ai-classification.PNG" alt="AI Classification" width="600"/></span>
+                                </center>
 
-									<p>
+                                <p>
 
-										This image gives us a results. The numbers represent different probabilities. These probabilities let us know how confident that AI is that the 
-										text falls within a certain category. We simply look at which category has the highest value and that is the classification we are going to go with. 
-										As we can see, the text we submitted seems to resonate the most with "Joy" at about 0.4816... or 48.16%. Since this appears to be a joyous comment,
-										what we can do is place the "Joy Face" that we linked earlier on the quadrant in which the text appears. 
+                                    This image gives us a results. The numbers represent different probabilities. These probabilities let us know how confident that AI is that the 
+                                    text falls within a certain category. We simply look at which category has the highest value and that is the classification we are going to go with. 
+                                    As we can see, the text we submitted seems to resonate the most with "Joy" at about 0.4816... or 48.16%. Since this appears to be a joyous comment,
+                                    what we can do is place the "Joy Face" that we linked earlier on the quadrant in which the text appears. 
 
-									</p>
+                                </p>
 
-									<center>
-										<span class="image"><img src="imgs/img11-meme-attempt-1.png" alt="Meme with One Face" width="600"/></span>
-									</center>
+                                <center>
+                                    <span class="image"><img src="imgs/img11-meme-attempt-1.png" alt="Meme with One Face" width="600"/></span>
+                                </center>
 
-									<p>
+                                <p>
 
-										We can then run the remaining three lines of text through the model and repeat the process.
+                                    We can then run the remaining three lines of text through the model and repeat the process.
 
-									</p>
+                                </p>
 
-									<center>
-										<span class="image"><img src="imgs/img12-meme-attempt-2.png" alt="Meme with All Faces" width="600"/></span>
-									</center>
+                                <center>
+                                    <span class="image"><img src="imgs/img12-meme-attempt-2.png" alt="Meme with All Faces" width="600"/></span>
+                                </center>
 
-									<br><br>
+                                <br><br>
 
-									<h2>Adding Poorly Drawn Objects</h2>
+                            <header>
+                                <h3> Adding Poorly Drawn Objects </h3>
+                            </header>
 
-									<p>
+                            <p>
 
-										One of the more charming and unique characteristics of Rage Comics are the crudely made drawings that people make. They aren't meant to be realistic 
-										or stylized... or good, and that's why we love them. However, this is one of those taks that is easier for a human to do than a computer. For example, 
-										if I wanted a picture of a cat, it would be much easier for me to doodle a quick sketch as opposed to trying to create some sort of AI that can do it for 
-										me. It took me a while to figure out how I wanted to about it, but then I was able to Google the answer.
+                                One of the more charming and unique characteristics of Rage Comics are the crudely made drawings that people make. They aren't meant to be realistic 
+                                or stylized... or good, and that's why we love them. However, this is one of those taks that is easier for a human to do than a computer. For example, 
+                                if I wanted a picture of a cat, it would be much easier for me to doodle a quick sketch as opposed to trying to create some sort of AI that can do it for 
+                                me. It took me a while to figure out how I wanted to about it, but then I was able to Google the answer.
 
-									</p>
+                            </p>
 
-									<h3> Google Quick, Draw!</h3>
+                            <header>
+                                <h4> Google Quick, Draw!</h4>
+                            </header>
 
-									<p>
+                            <p>
 
-										Google has a game entitled Quick, Draw! The way this game works is simple. You have are given a word that you are going to draw on your device. The catch is, 
-										you only have 20 seconds to draw. The objective of this game is to see if the Google AI can accurately guess what it is your drawing, based on your 
-										sketches.
+                                Google has a game entitled Quick, Draw! The way this game works is simple. You have are given a word that you are going to draw on your device. The catch is, 
+                                you only have 20 seconds to draw. The objective of this game is to see if the Google AI can accurately guess what it is your drawing, based on your 
+                                sketches.
 
-									</p>
+                            </p>
 
-									<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
-										<ul class="actions stacked">
-											<li><a href="https://quickdraw.withgoogle.com/" class="button primary small">Quick, Draw!</a></li>
+                            <div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+                                <ul class="actions stacked">
+                                    <li><a href="https://quickdraw.withgoogle.com/" class="button primary small">Quick, Draw!</a></li>
 
-										</ul>
-									</div>
+                                </ul>
+                            </div>
 
-									<p>
+                            <p>
 
-										This is amazing for us because this whole application was built with the specific purpose of trying to train an AI to be able to classify poorly drawn images.
-										The best part about this? The API is public, and I was able to access it! It even lets you look at a video of the drawing being made!
-										This means that I now had literally millions of poorly drawn images that were 
-										already labeled! What I could now do was write some code to analyze the text that ChatGPT created and if the Quick, Draw (QD) API detected any of the 
-										subjects, we could pull a random drawing and place it on the comic.
+                                This is amazing for us because this whole application was built with the specific purpose of trying to train an AI to be able to classify poorly drawn images.
+                                The best part about this? The API is public, and I was able to access it! It even lets you look at a video of the drawing being made!
+                                This means that I now had literally millions of poorly drawn images that were 
+                                already labeled! What I could now do was write some code to analyze the text that ChatGPT created and if the Quick, Draw (QD) API detected any of the 
+                                subjects, we could pull a random drawing and place it on the comic.
 
-									</p>
+                            </p>
 
-									<div style="text-align: center;">
-										<div style="display: inline-block;">
-											<span class="image"><img src="imgs/img13-raccoon.png" alt="Raccoon Drawing" width="300"/></span>
-											<span class="image"><img src="imgs/img14-mona-lisa-drawing.png" alt="Mona Lisa Drawing" width="300"/></span>
-										</div>
-										<div>
-											<p>Raccoon Drawing and Mona Lisa Drawing</p>
-										</div>
-									</div>
+                            <div style="text-align: center;">
+                                <div style="display: inline-block;">
+                                    <span class="image"><img src="imgs/img13-raccoon.png" alt="Raccoon Drawing" width="300"/></span>
+                                    <span class="image"><img src="imgs/img14-mona-lisa-drawing.png" alt="Mona Lisa Drawing" width="300"/></span>
+                                </div>
+                                <div>
+                                    <p>Raccoon Drawing and Mona Lisa Drawing</p>
+                                </div>
+                            </div>
 
-									<p>
+                            <p>
 
-										
-									</p>
+                                
+                            </p>
 
-									<center>
-										<span class="image"><img src="imgs/img15-animal-migration.gif" alt="Animal Migration Gif" width="600"/></span>
-									</center>
+                            <center>
+                                <span class="image"><img src="imgs/img15-animal-migration.gif" alt="Animal Migration Gif" width="600"/></span>
+                            </center>
 
-									<br><br>
+                            <br><br>
 
-									<p>
+                            <p>
 
-										Unforuntately, there are only a certain amount of items that the AI was trained on. This means that the probability that the ChatGPT text has a subject 
-										that can be found within the QD dataset was really small. The way I fixed this was by simply going to the prompt that I had created to get the text and fed 
-										it the list of possible drawing categories. I told ChatGPT to try to include as many objects from the list as possible when creating text.
+                                Unforuntately, there are only a certain amount of items that the AI was trained on. This means that the probability that the ChatGPT text has a subject 
+                                that can be found within the QD dataset was really small. The way I fixed this was by simply going to the prompt that I had created to get the text and fed 
+                                it the list of possible drawing categories. I told ChatGPT to try to include as many objects from the list as possible when creating text.
 
-									</p>
+                            </p>
 
-									<p>
+                            <p>
 
-										With the newly curated text, we could go back to the plan I had previoously mentioned. What I could now do was analyze the text and if we see a match with one 
-										of the words from the text and one of the categories from the QD API, we could then place a drawing onto the panel in which the object was referenced. I went ahead and 
-										placed them in a random location so that it didn't look super formulaic.
+                                With the newly curated text, we could go back to the plan I had previoously mentioned. What I could now do was analyze the text and if we see a match with one 
+                                of the words from the text and one of the categories from the QD API, we could then place a drawing onto the panel in which the object was referenced. I went ahead and 
+                                placed them in a random location so that it didn't look super formulaic.
 
-									</p>
+                            </p>
 
-									<h2>Finishing Up</h2>
+                            <header>
+                                <h3> Finishing Up </h3>
+                            </header>
 
-									<p>
+                            <p>
 
-										To finally finish this project, I went ahead and added some bodies to the faces so that they weren't floating. I tried to add a bit of randomness to the lines 
-										so that it looked like they were hand drawn. Overall, this project was pretty fun and a great way to spend a day. I feel like there are a ton of improvements that 
-										could definitely be made but honestly, this project felt like one big ongoing joke and I wasn't sure I was actually going to finish it. I'm glad I did and I feel Like
-										I learned a lot! I learned more about accessing and navigating API's as well as more about Natural Language Processing -- specifically Sentiment Analysis.
+                                To finally finish this project, I went ahead and added some bodies to the faces so that they weren't floating. I tried to add a bit of randomness to the lines 
+                                so that it looked like they were hand drawn. Overall, this project was pretty fun and a great way to spend a day. I feel like there are a ton of improvements that 
+                                could definitely be made but honestly, this project felt like one big ongoing joke and I wasn't sure I was actually going to finish it. I'm glad I did and I feel Like
+                                I learned a lot! I learned more about accessing and navigating API's as well as more about Natural Language Processing -- specifically Sentiment Analysis.
 
-									</p>
+                            </p>
 
-									<p>
+                            <p>
 
-										If you haven't already, I would appreciate it if you watched the video associated with this project! I linked it at the top of this post! With that being said, I leave you with 
-										some of my favorite memes that were created!
+                                If you haven't already, I would appreciate it if you watched the video associated with this project! I linked it at the top of this post! With that being said, I leave you with 
+                                some of my favorite memes that were created!
 
-									</p>
+                            </p>
 
-									<h2> The Results </h2>
+                            <header>
+                                <h3> The Results </h3>
+                            </header>
 
-									<center>
-										<span class="image"><img src="imgs/img16-final-meme-1.png" alt="Final Meme 1" width="600"/></span>
-									</center>
 
-									<br><br>
+                            <center>
+                                <span class="image"><img src="imgs/img16-final-meme-1.png" alt="Final Meme 1" width="600"/></span>
+                            </center>
 
-									<center>
-										<span class="image"><img src="imgs/img17-final-meme-2.png" alt="Final Meme 2" width="600"/></span>
-									</center>
+                            <br><br>
 
-									<br><br>
+                            <center>
+                                <span class="image"><img src="imgs/img17-final-meme-2.png" alt="Final Meme 2" width="600"/></span>
+                            </center>
 
-									<center>
-										<span class="image"><img src="imgs/img18-final-meme-3.png" alt="Final Meme 3" width="600"/></span>
-									</center>
+                            <br><br>
 
-									<br><br>
+                            <center>
+                                <span class="image"><img src="imgs/img18-final-meme-3.png" alt="Final Meme 3" width="600"/></span>
+                            </center>
 
+                            <br><br>
 
+							<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+								<ul class="actions stacked">
+									<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
 
+								</ul>
+							</div>
 
 
-
-
-
-									<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
-										<ul class="actions stacked">
-											<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
-
-										</ul>
-									</div>
-							</section>
+							</article>
 
 					</div>
+				</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://www.youtube.com/@MitchsMisadventures" class="icon brands alt fa-youtube"><span class="label">YouTube</span></a></li>
-								<li><a href="https://twitter.com/MitchsMistweets" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.instagram.com/mitchsmisadventures/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div>
+							<section>
+								<header>
+									<h2>Find me at...</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@MitchsMisadventures"><span class="label">YouTube</span></a></li>
+									<li><a class="icon brands fa-twitter" href="https://x.com/MitchsMistweets"><span class="label">Twitter</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/MitchsMisadventures"><span class="label">Github</span></a></li>
+									<li><a class="icon brands fa-google" href="mailto:mitchsmisadventures@gmail.com"><span class="label">GMail</span></a></li>
+								</ul>
+							</section>
 						</div>
-					</footer>
+						<div class="col-12">
 
-			</div>
+							<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<!-- <li>&copy; Untitled. All rights reserved.</li> -->
+										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
 
-		<!-- Scripts -->
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
+						</div>
+					</div>
+				</div>
+			</section>
 
-	</body>
+	</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
 </html>

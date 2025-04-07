@@ -1,0 +1,277 @@
+-<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<head>
+			<title>Destroying Mario Party DS Minigames Through AI</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<link rel="icon" href="../../images/sub badge.png" type="image/x-icon" />
+			<link rel="stylesheet" href="../../assets/css/main.css" />
+			<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+		</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<section id="header">
+
+				<!-- Logo -->
+					<h1><a href="index.html">MitchsMisadventures</a></h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="../../index.html">Home</a></li>
+							<li class="current"><a href="../../projects.html">Projects</a></li>
+							<li class="current">
+								<a href="https://public.tableau.com/app/profile/mitchsmisadventures/vizzes" target="_blank">Dashboards</a>
+							  </li>
+							  <li class="current"><a href="../../contact.html">Contact</a></li>
+						</ul>
+					</nav>
+
+			</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+
+						<!-- Content -->
+							<article class="box post">
+                                
+                                <header>
+                                    <h3>Introduction</h3>
+                                </header>
+
+                                <p>
+
+                                    <i>Mario Party DS</i> is a video game published by Nintendo in 2007. The premise is simple. You and up to three friends (or bots) traverse through a board game style 
+                                    field as you try to collect the most amount of stars and coins along the way. After a predetermined number of moves, the player with the most stars and coins wins. What made this game 
+                                    so exciting though, were the minigames. After every single round, players would have to compete in a random minigame. The winner would get coins which of course would help them on their quest  
+                                    to be the best. The really exciting part about this was the fact that players had the option to <b>only</b> play the minigames, if that's what they wanted to. And believe me, that's what we wanted to.
+
+                                    <br><br>
+
+                                    While <i>Mario Party DS</i> boasts over 70 minigames, we are only going to focus on the 32 Free for All minigames for this project. And out of those 32 minigames, we're going to focus on 10 that I felt would be an interesting
+                                    challenge to try to code up.
+
+                                    <br><br>
+
+                                    If you would like to see the video associated with this project, feel free to check it out on my TikTok, <a href = https://www.tiktok.com/@mitchsmisadventures/video/7337750095372307742>@MitchsMisadventures</a> I also posted a video 
+                                    on YouTube with the same premise:
+
+
+                                    <center>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LszXKtFGQmo?si=z1r95gsbsoTCJWGD" 
+                                        title="YouTube video player" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </center>
+
+                                    <br><br>
+
+                                </p>
+
+                                <p>
+
+                                    For this project, we are going to look at the following games:
+
+                                </p>
+
+                                <li><a href="#goomba-wrangler">Goomba Wrangler</a></li>
+                                <li>Rail Riders</li>
+                                <li>Dress for Success</li>
+                                <li>Study Fall</li>
+                                <li>Trash Landing</li>
+                                <li>Domino Effect</li>
+                                <li>Cheep Cheep Chance</li>
+                                <li>Get the Lead Out</li>
+                                <li>Cherry-go-Round</li>
+                                <li>Boogie Beam</li> <br>
+
+                                <b>Bonus</b>
+
+                                <li>Star Catchers</li> <br><br>
+
+                                <p>
+                                    <strong style="background-color: #fff3b0;">NOTE: These writeups take a bit of time to write so this blog might not be complete. However, the project itself is done and you can see the finished product by watching the video on YouTube!</strong>
+
+                                </p>
+
+                                <header>
+                                    <h3 id="goomba-wrangler">Goomba Wrangler</h3>
+                                </header>
+
+                                <header> 
+                                    <h4>How to Play</h4>
+                                </header>
+
+                                <p>
+
+                                    Goomba Wrangler is not only the first minigame that we're going to take a look at in this project, but, it's also the first minigame that appears on the list when you search at the Mario Party DS minigame list.
+                                    The premise of this game is pretty simple. 
+                                    On screen there are going to be brown Goomba's that move in a somewhat random pattern and your goal is to collect as many as you can to gain points. 
+                                    You gather Goomba's by drawing a circle around them using your <i>stylus</i> on the touch screen.
+                                    Here's the catch, when a Goomba is collected, it will no longer appear on the arena which means a Goomba can only be claimed by one person.
+                                    Furthermore, there are also Bob-omb's that run around the field.
+                                    Collecting one of these will result in point deductions.
+                                </p>
+
+								<center>
+									<span class="image"><img src="imgs/01-gw.png" alt="Goomba Wrangler Screenshot" style="width: 800px; height: auto;" /></span>
+								</center>
+
+                                <header>
+                                    <h4>Image Masking</h4>
+                                </header>
+
+                                <p>
+
+                                    The approach that I took with this minigame is one that involves image masking. 
+                                    Image masking is a popular process in computer vision that essentially allows you to process and manipulate only certain areas of an image while leaving other areas untouched.
+                                    What I wanted to do was create a process that would be able to locate the position of Goomba's and try to find their position.
+                                    To do this, I wrote some Python code that would look for colors that closely resembled that of the Goomba brown.
+                                    This approach took a few tweaks to get working but it honestly worked out pretty well.
+
+                                </p>
+
+								<center>
+									<span class="image"><img src="imgs/02-goomba-plain.png" alt="Goomba Wrangler No Mask" style="width: 800px; height: auto;" /></span>
+								</center>
+
+
+								<center>
+									<span class="image"><img src="imgs/03-goomba-mask.png" alt="Goomba Wrangler With Mask" style="width: 800px; height: auto;" /></span>
+								</center>
+
+                                <br>
+
+                                <p>
+
+                                    When we create our masks and only locate the pixels that have the color that closely resemble that of a Goomba, we are left with a very useful mask.
+                                    If we isolate those pixels and present them as their own layer, we can see that the mask that we chose ended up working pretty well.
+                                    You may notice that there appear to be some artificats that appear on our mask that don't belong to these Goomba's. 
+                                    This happens because the colored pixels that represent the Bob-Omb feet are falling within our range of pixels that we used to find Goomba's. 
+                                    There are a few ways we could go about fixing this, we could either fix our band and make it more exclusive, or, we could take another approach. 
+
+                                </p>
+
+                                <p>
+
+                                    What I ended up doing was taking a more "blobby" approach. 
+                                    Instead of trying to find all pixels that fell within our mask, I only looked for large clusters of pixels. 
+                                    Searching for blobs allows us to only care about regions that have high concentrations of a specific interest.
+                                    In the case of our mask, we can make it so that we only search for regions (or blobs) that have a large amount of white pixels near each other. 
+                                    This helps us remove any extra and unnecessary noise and also help prevent the amount of false positives that arise. 
+                                    With this new blob detection in place, we can now write some code to create a boundary around these blobs.
+                                    The boundaries are not necessary for the code to function and are more used as a visual aide. 
+                                    If we super impose the boundaries onto the original video feed, we can see that our new code with blob detection works very well.
+
+                                </p>
+
+								<center>
+									<span class="image"><img src="imgs/04-goomba-outline.png" alt="Goomba Wrangler Screenshot" style="width: 800px; height: auto;" /></span>
+								</center>
+                                <br>
+                                <p>
+
+                                    The next part of this challenge is finding a way to actually "collect" these Goomba's.
+                                    This part is actually solved with the previous masking blob detection step. 
+                                    When we created the boundaries and searched for the blobs, that of course translates to use finding the location of the Goomba's. 
+                                    As aforementioned, to capture a Goomba, you have to draw a circle around the Goomba. 
+                                    After doing some manual testing, I realized that we could be a bit cheeky with our approach.
+                                    Originally, I started to create circles using some Python code that could generate circular arcs around the Goomba which would then be pieced together and create a circle.
+                                    But then I realized that all we need to do is create an enclosuse around the Goombas, and that would be good enough. 
+                                    So that's what I did.
+
+                                </p>
+
+								<center>
+									<span class="image"><img src="imgs/05-goomba-circle.png" alt="Goomba Wrangler Screenshot" style="width: 800px; height: auto;" /></span>
+								</center>
+
+
+                                <center>
+									<span class="image"><img src="imgs/06-goomba-square.png" alt="Goomba Wrangler Screenshot" style="width: 800px; height: auto;" /></span>
+								</center>
+                                <br>
+
+                                <p>
+
+                                    Instead of creating circles, I created squares.
+                                    Squares are a lot easier to create than Python and are more efficient.
+                                    The final piece of the puzzle was translating these squares into actionable functions, which was actually pretty straightforward.
+                                    Given the origin of the blobs, I could simply create four corners that encapsulate the blob. 
+                                    From there, I just had to write some code that automatically moves my mouse to each of these four corners (and back to the starting corner), and that was it!
+
+                                </p>
+
+                                <center>
+									<span class="image"><img src="imgs/07-goomba-collect.png" alt="Goomba Wrangler Screenshot" style="width: 800px; height: auto;" /></span>
+								</center>
+                                <br>
+
+                            <br><br>
+
+							<div style="text-align:center;width: 300px;margin: 0 auto;border-style: dotted;"class="col-6 col-12-small">
+								<ul class="actions stacked">
+									<li><a href="../../projects.html" class="button primary small">Back To Projects</a></li>
+
+								</ul>
+							</div>
+
+
+							</article>
+
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div>
+							<section>
+								<header>
+									<h2>Find me at...</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@MitchsMisadventures"><span class="label">YouTube</span></a></li>
+									<li><a class="icon brands fa-twitter" href="https://x.com/MitchsMistweets"><span class="label">Twitter</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/MitchsMisadventures"><span class="label">Github</span></a></li>
+									<li><a class="icon brands fa-google" href="mailto:mitchsmisadventures@gmail.com"><span class="label">GMail</span></a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-12">
+
+							<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<!-- <li>&copy; Untitled. All rights reserved.</li> -->
+										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+	</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
+</html>
